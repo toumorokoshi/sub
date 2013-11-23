@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# SOURCE
+# Usage: sub git_set_date {date}
+# Summary: set the date in git
+# Help: sub git_set_date "Sun Oct 7 19:55:10 2013 -0700"
+
+export GIT_AUTHOR_DATE=$1
+export GIT_COMMITTER_DATE=$1
