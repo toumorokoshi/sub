@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# SOURCE
+# Usage: sub s {path}
+# Summary: A quick way to navigate to the sandbox location
+
+if [ ! -d ~/sandbox ]; then
+    mkdir -p ~/sandbox
+fi
+
+# provide sub completions
+if [ "$1" == "--complete" ]; then  
+    ls ~/sandbox
+    exit
+fi
+
+
+cd ~/sandbox/$1

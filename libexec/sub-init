@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SOURCE
 # to instantiate with this, add:
 # tmp=`pwd`; # cd SUB_PATH/ && . sub-init2 && cd $tmp
 # to your bashrc
@@ -36,7 +37,7 @@ case "$0" in
 bash | zsh)
   source ../completions/sub.$0
   ;;
--bash )
+-bash | /bin/bash | * )
   source ../completions/sub.bash
   ;;
 esac
