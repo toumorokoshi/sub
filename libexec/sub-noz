@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# SOURCE
+# Usage: sub noz
+# Summary: Deactivate zillow sprinter env
+
+# provide sub completions
+sprinter deactivate zillow
