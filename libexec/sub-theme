@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# SOURCE
+# Usage: sub theme <theme>
+# Summary: Switch between themes quickly  
+
+# provide sub completions
+if [ "$1" == "--complete" ]; then  
+    echo "standard"
+    echo "presentation"
+    exit
+fi
+cd ~/workspace/$1
+
+__set_theme() {
+  XRDB=$1
+  xrdb ~/.libs/$XRDB
+  xmonad --restart
+}
+
+case $1 in
+     s|standard)
+       __set_theme x-standard
+     ;;
+     p|presentation)
+       __set_theme x-presentation
+     ;;
+esac 

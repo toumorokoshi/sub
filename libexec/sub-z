@@ -4,4 +4,28 @@
 # Summary: activate zillow env
 
 # provide sub completions
-sprinter activate zillow
+if [ "$1" == "--complete" ]; then
+    echo "activate"
+    echo "deactivate"
+fi
+case "$1" in
+    activate)
+        sprinter activate zillow
+    ;;
+    deactivate)
+        sprinter deactivate zillow
+    ;;
+    # vpn-on)
+    #     echo "Turning vpn on, logging to /tmp/zvpn.log..."
+    #     sudo echo ""
+    #     sudo pon zillow debug dump logfd 2 usepeerdns nodetach &> /tmp/zvpn.log &
+    #     #sudo route add -net 10.0.0.0 netmask 255.0.0.0 dev ppp0
+    #     #sudo route add -net 192.168.0.0 netmask 255.255.0.0 dev ppp0
+    # ;;
+    # vpn-off)
+    #     echo "Turning vpn off..."
+    #     sudo poff zillow
+    #     # sudo route del -net 10.0.0.0 netmask 255.0.0.0 dev ppp0
+    #     # sudo route del -net 192.168.0.0 netmask 255.255.0.0 dev ppp0
+    # ;;
+esac
