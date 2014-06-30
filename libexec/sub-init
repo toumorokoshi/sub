@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # SOURCE
 # to instantiate with this, add:
-# tmp=`pwd`; # cd SUB_PATH/ && . sub-init2 && cd $tmp
+# tmp=`pwd`; # cd SUB_PATH/ && . ./sub-init && cd $tmp
 # to your bashrc
 
 _sub_resolve_link() {
@@ -11,7 +11,7 @@ _sub_resolve_link() {
 _sub_abs_dirname() {
   local cwd="$(pwd)"
   local path="$1"
-  
+
   while [ -n "$path" ]; do
     cd "${path%/*}"
     local name="${path##*/}"
@@ -65,7 +65,7 @@ function sub() {
               $command_path "$@"
           elif [[ "$source_command" -eq 0 ]]; then
               $command_path "$@"
-          else 
+          else
               . $command_path "$@"
           fi
       fi
