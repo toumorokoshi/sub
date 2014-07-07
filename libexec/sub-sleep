@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Summary: make the computer sleep (suspend to ram by default)
+
+SLEEP_ARGUMENT=$1
+if [[ $SLEEP_ARGUMENT = "" ]]; then
+    SLEEP_ARGUMENT="mem"
+fi
+sudo sh -c "echo $SLEEP_ARGUMENT > /sys/power/state"
