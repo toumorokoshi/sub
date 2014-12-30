@@ -6,3 +6,4 @@ if [[ $SLEEP_ARGUMENT = "" ]]; then
     SLEEP_ARGUMENT="mem"
 fi
 sudo sh -c "echo $SLEEP_ARGUMENT > /sys/power/state"
+dm-tool lock &
